@@ -1,21 +1,24 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from "react";
 
-import BooksList from './components/BooksList';
-import AddBook from './components/AddBook';
-import './App.css';
+import BooksList from "./components/BooksList";
+import AddBook from "./components/AddBook";
+import "./App.css";
 
 function App() {
   const [books, setBooks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [showAddBookForm, setShowAddBookForm] = useState(false);
 
   const fetchBooksHandler = useCallback(async () => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('https://react-http-29ca8-default-rtdb.firebaseio.com/books.json');
+      const response = await fetch(
+        "https://react-http-29ca8-default-rtdb.firebaseio.com/books.json"
+      );
       if (!response.ok) {
-        throw new Error('Something went wrong!');
+        throw new Error("Something went wrong!");
       }
 
       const data = await response.json();
@@ -27,12 +30,10 @@ function App() {
           id: key,
           title: data[key].title,
           openingText: data[key].openingText,
-          author: data[key].author
-        })
+          author: data[key].author,
+        });
       }
 
-      
-      
       setBooks(loadedBooks);
     } catch (error) {
       setError(error.message);
@@ -53,7 +54,7 @@ function App() {
       }
     });
     const data = await response.json();
-
+    setShowAddBookForm(false);
   }
 
   let content = <p>No books were found. Add a new!</p>;
@@ -73,7 +74,8 @@ function App() {
   return (
     <React.Fragment>
       <section>
-        <AddBook onAddBook={addBookHandler} />
+        {!showAddBookForm && <button onClick={setShowAddBookForm(true)}>Add a New Book</button>}
+        {showAddBookForm && <AddBook onAddBook={addBookHandler} />}
       </section>
       <section>
         <button onClick={fetchBooksHandler}>Fetch Books</button>
