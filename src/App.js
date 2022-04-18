@@ -54,7 +54,7 @@ function App() {
       }
     });
     const data = await response.json();
-    setShowAddBookForm(false);
+    showAddBookFormHandler();
   }
 
   let content = <p>No books were found. Add a new!</p>;
@@ -71,10 +71,14 @@ function App() {
     content = <p>Loading...</p>;
   }
 
+  function showAddBookFormHandler() {
+    setShowAddBookForm(!showAddBookForm);
+  }
+
   return (
     <React.Fragment>
       <section>
-        {!showAddBookForm && <button onClick={setShowAddBookForm(true)}>Add a New Book</button>}
+        {!showAddBookForm && <button onClick={showAddBookFormHandler}>Add a new book</button>}
         {showAddBookForm && <AddBook onAddBook={addBookHandler} />}
       </section>
       <section>
