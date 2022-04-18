@@ -18,3 +18,8 @@
   margin: 0;
   font-size: 1rem;
 }
+
+.book p {
+  white-space: pre-line;
+  white-space: pre-wrap;
+}

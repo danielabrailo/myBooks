@@ -1,7 +1,7 @@
 import React from 'react';
-
 import Book from './Book';
 import classes from './BooksList.module.css';
+
 
 const BookList = (props) => {
   return (
@@ -12,6 +12,7 @@ const BookList = (props) => {
           title={book.title}
           author={book.author}
           summary={book.summary}
+          phrases={book.phrases}
         />
       ))}
     </ul>
