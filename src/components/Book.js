@@ -7,7 +7,7 @@ const Book = (props) => {
     <li className={classes.book}>
       <h2>{props.title}</h2>
       <h3>By {props.author}</h3>
-      <p>{props.openingText}</p>
+      <p>{props.summary}</p>
     </li>
   );
 };

@@ -4,8 +4,9 @@ import classes from './AddBook.module.css';
 
 function AddBook(props) {
   const titleRef = useRef('');
-  const openingTextRef = useRef('');
   const authorRef = useRef('');
+  const summaryRef = useRef('');
+  const phrasesRef = useRef('');
 
   function submitHandler(event) {
     event.preventDefault();
@@ -14,8 +15,9 @@ function AddBook(props) {
 
     const book = {
       title: titleRef.current.value,
-      openingText: openingTextRef.current.value,
       author: authorRef.current.value,
+      summary: summaryRef.current.value,
+      phrases: phrasesRef.current.value,
     };
 
     props.onAddBook(book);
@@ -29,12 +31,16 @@ function AddBook(props) {
         <input type='text' id='title' ref={titleRef} />
       </div>
       <div className={classes.control}>
-        <label htmlFor='opening-text'>Opening Text</label>
-        <textarea rows='5' id='opening-text' ref={openingTextRef}></textarea>
-      </div>
-      <div className={classes.control}>
         <label htmlFor='date'>Author</label>
         <input type='text' id='date' ref={authorRef} />
+      </div>
+      <div className={classes.control}>
+        <label htmlFor='summary'>Summary</label>
+        <textarea rows='5' id='summary' ref={summaryRef}></textarea>
+      </div>
+      <div className={classes.control}>
+        <label htmlFor='phrases'>Add your favorite phrases from the book</label>
+        <textarea rows='5' id='phrases' ref={phrasesRef}></textarea>
       </div>
       <button>Add Book</button>
     </form>

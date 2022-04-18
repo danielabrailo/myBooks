@@ -11,7 +11,7 @@ const BookList = (props) => {
           key={book.id}
           title={book.title}
           author={book.author}
-          openingText={book.openingText}
+          summary={book.summary}
         />
       ))}
     </ul>

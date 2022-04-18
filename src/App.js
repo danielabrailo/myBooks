@@ -29,8 +29,9 @@ function App() {
         loadedBooks.push({
           id: key,
           title: data[key].title,
-          openingText: data[key].openingText,
           author: data[key].author,
+          summary: data[key].summary,
+          phrases: data[key].phrases,
         });
       }
 
