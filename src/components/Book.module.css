@@ -1,7 +1,7 @@
 .book {
   margin: 1rem;
   padding: 1rem;
-  background-color: #230052;
+  background-color: rgba(0, 0, 0, 0.75);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 12px;
   text-align: center;
@@ -10,11 +10,11 @@
 
 .book h2 {
   font-size: 2rem;
-  color: #ecacde;
+  color: #9f57da;
 }
 
 .book h3 {
-  color: #ec77c9;
+  color: #ab87ee;
   margin: 0;
   font-size: 1rem;
 }

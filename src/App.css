@@ -1,9 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  background-image: 
+  linear-gradient(to right, rgba(230, 231, 232, 0.52), rgba(34, 31, 45, 0.73)),
+  url("./components/images/bckg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 section {
   margin: 1rem auto;
   width: 90%;
   max-width: 40rem;
   text-align: center;
-  background-color: white;
+  background-color: rgba(201, 199, 209, 0.85);
   padding: 2rem;
   border-radius: 12px;
 }
@@ -11,10 +30,11 @@ section {
 button {
   font: inherit;
   cursor: pointer;
-  background: #230052;
-  border: 1px solid #230052;
+  background: rgba(166, 118, 176,0.85);
+  border: 1px solid rgba(166, 118, 176,0.85);
   color: white;
-  padding: 0.75rem 2rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
   border-radius: 20px;
 }
 
@@ -24,6 +44,6 @@ button:focus {
 
 button:hover,
 button:active {
-  background-color: #460897;
-  border-color: #460897;
+  background-color: rgba(199, 151, 209, 0.85);
+  border-color: rgba(199, 151, 209, 0.85);
 }

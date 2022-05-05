@@ -18,6 +18,7 @@ const Book = (props) => {
           <p>{props.summary}</p> <br/>
           <h3>My favorite phrases from the book are:</h3> <br />
           <p>{props.phrases}</p>
+          <button>Delete Book</button>
         </React.Fragment>
       )}
       <button onClick={showBookDetailsHandler}>{showBookDetails ? 'Less Details' : 'More Details'}</button>

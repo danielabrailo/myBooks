@@ -11,6 +11,7 @@
 
 .control input,
 .control textarea {
+  background-color: rgba(232, 207, 236, 0.73);
   display: block;
   width: 100%;
   font: inherit;
@@ -22,5 +23,5 @@
 .control input:focus,
 .control textarea:focus {
   outline: none;
-  border-color: #230052;
+  border-color: rgba(138, 117, 142, 0.9);
 }
